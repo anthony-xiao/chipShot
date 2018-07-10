@@ -1,6 +1,6 @@
 import React from 'react'
 import {Text, View} from 'react-native'
-import {lastRoundScore} from '../db'
+import {lowestRoundScore} from '../db'
 
 class Test extends React.Component {
   constructor (props) {
@@ -16,10 +16,10 @@ class Test extends React.Component {
   }
 
   componentDidMount () {
-    lastRoundScore()
+    lowestRoundScore()
       .then(lastRound => {
         this.setState({
-          realm1: lastRound[0]
+          realm1: {score: lastRound}
         })
       })
   }

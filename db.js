@@ -22,11 +22,11 @@ export const newRoundScore = (newRound) => new Promise((resolve, reject) => {
     .catch((err) => reject(err))
 })
 
-export const lastRoundScore = () => new Promise((resolve, reject) => {
+export const lowestRoundScore = () => new Promise((resolve, reject) => {
   Realm.open({schema: [RoundsSchema]})
     .then(realm => {
-      const lastRound = realm.objects('Rounds').filtered('id == 1')
-      resolve(lastRound)
+      const lowestScore = realm.objects('Rounds').min('score')
+      resolve(lowestScore)
     })
     .catch((err) => reject(err))
 })
