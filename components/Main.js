@@ -41,8 +41,8 @@ class Main extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-        <Test />
         <Playground />
+        <Test />
         <Golfer />
         <Button onPress={this.increaseCount} title='stroke'/>
         <Text style={styles.first}>Stroke: {this.props.currentHole}</Text>

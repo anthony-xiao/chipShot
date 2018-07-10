@@ -9,7 +9,7 @@ export default StyleSheet.create({
   second: {
     fontWeight: '500',
     fontSize: 20,
-    backgroundColor: 'blue'
+    backgroundColor: 'yellow'
     // height: 20
   },
   button: {
