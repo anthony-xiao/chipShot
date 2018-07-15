@@ -31,7 +31,7 @@ class Playground extends React.Component {
         <Text style={styles.first}>Test!</Text>
         <Text style={styles.second}>{this.state.id}</Text>
         <TextInput placeholder="Type here to translate!" onChangeText={(text) => this.setState({text})} />
-        <Text>{this.state.text.split(' ').map((word) => word && '🍕')}</Text>
+        <Text>{this.state.text.split(' ').map((word) => word && '🍕').join(' ')}</Text>
       </View>
     )
   }
