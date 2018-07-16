@@ -22,7 +22,7 @@ const GolferSchema = {
   }
 }
 
-const newRoundScore = (newRound) => new Promise((resolve, reject) => {
+export const newRoundScore = (newRound) => new Promise((resolve, reject) => {
   Realm.open({schema: [RoundsSchema]})
     .then(realm => {
       realm.write(() => {
@@ -33,8 +33,8 @@ const newRoundScore = (newRound) => new Promise((resolve, reject) => {
     .catch((err) => reject(err))
 })
 
-const lowestRoundScore = () => new Promise((resolve, reject) => {
-  Realm.open({schema: [RoundsSchema]})
+export const lowestRoundScore = () => new Promise((resolve, reject) => {
+  Realm.open({schema: [GolferSchema, RoundsSchema]})
     .then(realm => {
       const lowestScore = realm.objects('Rounds').min('score')
       resolve(lowestScore)
@@ -42,7 +42,7 @@ const lowestRoundScore = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err))
 })
 
-const newGolfer = (newRound) => new Promise((resolve, reject) => {
+export const newGolfer = (newRound) => new Promise((resolve, reject) => {
   Realm.open({schema: [GolferSchema]})
     .then(realm => {
       realm.write(() => {
@@ -53,20 +53,10 @@ const newGolfer = (newRound) => new Promise((resolve, reject) => {
     .catch((err) => reject(err))
 })
 
-const newRealm = () => new Promise((resolve, reject) => {
+export const newRealm = () => new Promise((resolve, reject) => {
   Realm.open({schema: [GolferSchema, RoundsSchema]})
     .then(() => {
       resolve()
     })
     .catch((err) => reject(err))
 })
-
-const Golfer1 = {
-  id: 1,
-  name: 'Anthony',
-  handicap: 30
-}
-
-const deleteRealm = (config) => {
-  Realm.deleteFile(config)
-}
