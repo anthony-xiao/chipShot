@@ -24,5 +24,10 @@ export default StyleSheet.create({
     fontSize: 30,
     color: '#575C5D'
     // height: 100
+  },
+  item: {
+    padding: 20,
+    fontSize: 14,
+    height: 30
   }
 })

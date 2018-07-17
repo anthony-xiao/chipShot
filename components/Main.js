@@ -6,6 +6,7 @@ import {currentHole, emptyHole} from '../actions'
 import Playground from './Playground'
 import Golfer from './Golfer'
 import Test from './Test'
+import List from './ListView'
 
 class Main extends React.Component {
   constructor (props) {
@@ -51,7 +52,6 @@ class Main extends React.Component {
         </TouchableOpacity>
         <Text style={styles.second}>score: {this.state.score.map(score => score).join(', ')}</Text>
       </View>
-
     )
   }
 }
