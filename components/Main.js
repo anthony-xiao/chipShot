@@ -6,7 +6,7 @@ import {currentHole, emptyHole} from '../actions'
 import Playground from './Playground'
 import Golfer from './Golfer'
 import Test from './Test'
-import List from './ListView'
+// import List from './ListView'
 
 class Main extends React.Component {
   constructor (props) {
@@ -42,6 +42,13 @@ class Main extends React.Component {
   render () {
     return (
       <View style={styles.container}>
+        <Button
+          title="Params"
+          onPress={() => this.props.navigation.navigate('GetParams', {
+            paramItem: 'Please read this param Item',
+            number: 100
+          })}
+        />
         <Playground />
         <Test />
         <Golfer />

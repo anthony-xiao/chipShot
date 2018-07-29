@@ -1,11 +1,19 @@
 import React from 'react'
 import styles from '../styles'
-import {Text, View, FlatList, SectionList} from 'react-native'
+import {Text, View, Button, SectionList} from 'react-native'
 
 class List extends React.Component {
   render () {
     return (
       <View>
+        <Button
+          title="Go to List"
+          onPress={() => this.props.navigation.push('ListView')}
+        />
+        <Button
+          title="Go Home"
+          onPress={() => this.props.navigation.push('Home')}
+        />
         <SectionList
           sections={testData}
           renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
