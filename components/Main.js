@@ -9,6 +9,9 @@ import Test from './Test'
 // import List from './ListView'
 
 class Main extends React.Component {
+  static navigationOptions = {
+    title: 'Home',
+  }
   constructor (props) {
     super(props)
     this.state = {
@@ -18,6 +21,7 @@ class Main extends React.Component {
     this.emptyCount = this.emptyCount.bind(this)
     this.nextHole = this.nextHole.bind(this)
   }
+
   increaseCount () {
     const action = currentHole()
     this.props.dispatch(action)
@@ -46,7 +50,8 @@ class Main extends React.Component {
           title="Params"
           onPress={() => this.props.navigation.navigate('GetParams', {
             paramItem: 'Please read this param Item',
-            number: 100
+            number: 100,
+            currentHole: this.props.currentHole
           })}
         />
         <Playground />
