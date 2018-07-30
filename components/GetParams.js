@@ -3,6 +3,12 @@ import {Text, View} from 'react-native'
 import styles from '../styles'
 
 class Main extends React.Component {
+  static navigationOptions = ({navigation}) => {
+    return {
+      title: navigation.getParam('paramItem', 'no number')
+    }
+  }
+
   render () {
     const {navigation} = this.props
     const paramItem = navigation.getParam('paramItem', 'No item found')
