@@ -32,5 +32,9 @@ export default StyleSheet.create({
   },
   headerstyle: {
     backgroundColor: '#7ACBCF'
+  },
+  Logo: {
+    width: 30,
+    height: 30
   }
 })

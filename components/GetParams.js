@@ -1,11 +1,16 @@
 import React from 'react'
 import {Text, View, Button} from 'react-native'
 import styles from '../styles'
+import Logo from './Logo'
 
 class Main extends React.Component {
-  static navigationOptions = ({navigation}) => {
+  static navigationOptions = ({navigation, navigationOptions}) => {
     return {
-      title: navigation.getParam('paramItem', 'no number')
+      title: navigation.getParam('paramItem', 'no number'),
+      headerStyle: {
+        backgroundColor: navigationOptions.headerTintColor,
+      },
+      headerTintColor: navigationOptions.headerStyle.backgroundColor,
     }
   }
 
@@ -18,6 +23,7 @@ class Main extends React.Component {
       <View style={styles.container}>
         <Text>{paramItem}, {digit}, {currentHole} </Text>
         <Button title='change title' onPress={()=> this.props.navigation.setParams({paramItem: 'changed!'})} />
+        <Logo />
       </View>
     )
   }
