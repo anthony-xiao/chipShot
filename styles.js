@@ -29,5 +29,12 @@ export default StyleSheet.create({
     padding: 20,
     fontSize: 14,
     height: 30
+  },
+  headerstyle: {
+    backgroundColor: '#7ACBCF'
+  },
+  Logo: {
+    width: 30,
+    height: 30
   }
 })
