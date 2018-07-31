@@ -1,5 +1,5 @@
 import React from 'react'
-import {Text, View} from 'react-native'
+import {Text, View, Button} from 'react-native'
 import styles from '../styles'
 
 class Main extends React.Component {
@@ -17,6 +17,7 @@ class Main extends React.Component {
     return (
       <View style={styles.container}>
         <Text>{paramItem}, {digit}, {currentHole} </Text>
+        <Button title='change title' onPress={()=> this.props.navigation.setParams({paramItem: 'changed!'})} />
       </View>
     )
   }
